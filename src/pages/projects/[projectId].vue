@@ -5,7 +5,7 @@ const route = useRoute()
 </script>
 
 <template>
-  <h1>Project {{ route.params.id }}</h1>
+  <h1>Project {{ route.params.projectId }}</h1>
 </template>
 
 <style scoped></style>
