@@ -16,8 +16,9 @@
     "format": "prettier --write --experimental-cli src/",
     "supabase:init": "supabase init",
     "supabase:login": "supabase login",
-    "supabase:link" : "supabase link --project-ref wfpwfpmyyknovzkabtdj "
-
+    "supabase:link": "supabase link --project-ref wfpwfpmyyknovzkabtdj",
+    "db:migrate": "supabase migration new projects-schema",
+    "db:reset": "supabase db reset --linked"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.86.0",
@@ -26,6 +27,7 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
     "@tsconfig/node24": "^24.0.3",
     "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^6.0.2",
