@@ -65,13 +65,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/tasks/[taskId]': RouteRecordInfo<
-      '/tasks/[taskId]',
-      '/tasks/:taskId',
-      { taskId: ParamValue<true> },
-      { taskId: ParamValue<false> },
-      | never
-    >,
   }
 
   /**
@@ -118,12 +111,6 @@ declare module 'vue-router/auto-routes' {
     'src/pages/tasks/index.vue': {
       routes:
         | '/tasks/'
-      views:
-        | never
-    }
-    'src/pages/tasks/[taskId].vue': {
-      routes:
-        | '/tasks/[taskId]'
       views:
         | never
     }
