@@ -28,6 +28,7 @@
     "@vueuse/core": "^14.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "iconify-icon": "^3.0.2",
     "lucide-vue-next": "^0.556.0",
     "pinia": "^3.0.4",
     "reka-ui": "^2.6.1",
@@ -38,6 +39,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^10.1.0",
+    "@iconify/vue": "^5.0.0",
     "@tsconfig/node24": "^24.0.3",
     "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^6.0.2",

@@ -1,6 +1,7 @@
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import './asset/index.css'
+import 'iconify-icon'
 
 import App from './App.vue'
 import router from './router'
