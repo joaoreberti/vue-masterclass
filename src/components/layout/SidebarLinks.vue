@@ -12,6 +12,8 @@ defineProps<{
 
 <template>
   <RouterLink
+    active-class="text-primary bg-muted"
+    exact-active-class=""
     v-for="link in links"
     :key="link.title"
     :to="link.to"
@@ -21,5 +23,3 @@ defineProps<{
     <span class="hidden lg:block text-nowrap">{{ link.title }}</span>
   </RouterLink>
 </template>
-
-<style scoped></style>
