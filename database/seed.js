@@ -13,6 +13,7 @@ const seedProjects = async (numEntries) => {
       name: name,
       slug: name.toLocaleLowerCase().replaceAll(' ', '-'),
       status: faker.helpers.arrayElement(['in-progress', 'completed']),
+      description: faker.lorem.paragraph(2),
       collaborators: faker.helpers.arrayElements([1, 2, 3]),
     }
     projects.push(entry)

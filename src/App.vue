@@ -4,6 +4,15 @@ import AuthLayout from './components/Layout/main/AuthLayout.vue'
 
 <template>
   <AuthLayout>
-    <RouterView />
+    <RouterView v-slot="{ Component, route }">
+      <template v-if="Component">
+        <Suspense :key="route.fullPath">
+          <Component :is="Component"></Component>
+          <template #fallback>
+            <span>Loading ...</span>
+          </template>
+        </Suspense>
+      </template>
+    </RouterView>
   </AuthLayout>
 </template>
