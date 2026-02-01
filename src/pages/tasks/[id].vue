@@ -2,6 +2,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Table, TableCell, TableHead, TableRow } from '@/components/ui/table'
+import { useErrorStore } from '@/stores/error'
 import { usePageStore } from '@/stores/page'
 import { taskQuery, type Task } from '@/utils/supaQueries'
 import { ref, watch } from 'vue'
@@ -10,8 +11,8 @@ import { useRoute } from 'vue-router'
 const { params } = useRoute('/tasks/[id]')
 const task = ref<Task | null>(null)
 const getTask = async () => {
-  const { data, error } = await taskQuery(Number(params.id))
-  if (error) throw error
+  const { data, error, status } = await taskQuery(Number(params.id))
+  if (error) useErrorStore().setError({ error, customCode: status })
   task.value = data
 }
 

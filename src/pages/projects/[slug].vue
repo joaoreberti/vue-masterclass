@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { useErrorStore } from '@/stores/error'
 import { usePageStore } from '@/stores/page'
 import { projectQuery, type Project } from '@/utils/supaQueries'
 import { ref, watch } from 'vue'
@@ -25,8 +26,8 @@ watch(
 )
 
 const getProject = async () => {
-  const { data, error } = await projectQuery(route.params.slug)
-  if (error) throw error
+  const { data, error, status } = await projectQuery(route.params.slug)
+  if (error) useErrorStore().setError({ error, customCode: status })
   project.value = data
 }
 
